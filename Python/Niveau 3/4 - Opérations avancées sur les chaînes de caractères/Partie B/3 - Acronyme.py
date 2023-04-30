@@ -1,7 +1,16 @@
 def main():
    
-    def a_le_meme_acronyme(titre):
-        """Renvoie True si le titre à le même acronyme
+    def a_le_meme_acronyme(titre, acronyme):
+        """
+        Renvoie True si le titre à le même acronyme
+        Entrée :
+            titre (str)
+        Sortie :
+            bool
+        >>>a_le_meme_acronyme("Le Petit Prince", "LPP")
+        True
+        >>>a_le_meme_acronyme("Le Petit Chat", "LPP")
+        False
         """
         titre_maj = titre.upper()
         acronyme_titre = ""
@@ -15,7 +24,17 @@ def main():
             return False  
          
     def titre_correct(titre):
-        """Renvoie le titre prêt à être afficher"""
+        """
+        Renvoie le titre prêt à être afficher
+        Entrée:
+            titre (str)
+        Sortie:
+            str
+        >>>titre_correct("le petit prince")
+        "Le Petit Prince"
+        >>>titre_correct("le petit chat")
+        "Le Petit Chat"
+        """
         titre_minuscule = titre.lower()
         mots = titre_minuscule.split()
         nouveau_titre = ""
@@ -35,7 +54,7 @@ def main():
     nombre_livres = int(input())
     for x in range(nombre_livres):
         titre_input = input()
-        if a_le_meme_acronyme(titre_input):
+        if a_le_meme_acronyme(titre_input, acronyme):
             print(titre_correct(titre_input))
 
 main()

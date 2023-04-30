@@ -1,40 +1,41 @@
-#Lecture de l'entrée
-nombre_erosions = int(input())
-ligne_image, colonne_image = map(int, input().split())
-
-image = [["." for _ in range(colonne_image)] for _ in range(ligne_image)]
-
-for ligne in range(ligne_image):
-    entrée = list(input().strip())
-    for colonne in range(colonne_image):
-        image[ligne][colonne] = entrée[colonne]
-
-def érosion(ligne, colonne):
+class Image:
+	"""objet Image en noir et blanc '#' et '.'
+    avec méthodes pour noircir une case, d'érosion et d'affichage.
     """
-    TODO
-    """
-    directions = [(-1,0),(0,-1),(1,0),(0,1)]
-    if (ligne-1 >= 0) and (ligne+1 <= ligne_image-1) and (colonne-1 >= 0) and (colonne+1 <= colonne_image-1):
-        pions_érodables = 0
-        for direction in directions:
-            index_ligne = direction[0]
-            index_colonne = direction[1]
-            if(image[ligne+index_ligne][colonne+index_colonne] == "#"):
-                pions_érodables += 1
-        if pions_érodables == 4:
-            image[ligne][colonne] = "."
-            for direction in directions:
-                index_ligne = direction[0]
-                index_colonne = direction[1]
-                image[ligne+index_ligne][colonne+index_colonne] = "."
 
-for ligne in range(ligne_image):
-    for colonne in range(colonne_image):
-        if(image[ligne][colonne] == "#"):
-            érosion(ligne,colonne)
-    
-print()
-for ligne in range(ligne_image):
-    for colonne in range(colonne_image):
-        print(image[ligne][colonne], end="")
-    print()
+	def __init__(self, nb_lignes, nb_colonnes, grille=None):
+		"""Si `grille` est absent, l'image sera blanche"""
+		self.__nb_lignes = nb_lignes
+		self.__nb_colonnes = nb_colonnes
+		if grille is not None:
+			self.__grille = grille
+		else:
+			self.__grille = [['.' for _ in range(nb_colonnes)]
+			                 for _ in range(nb_lignes)]
+
+	def affiche(self):
+		for ligne in self.__grille:
+			print("".join(ligne))
+
+	def noircir(self, i, j):
+		self.__grille[i][j] = '#'
+
+	def érosion(self):
+		"""Renvoie une nouvelle image érodée"""
+		érodée = Image(self.__nb_lignes, self.__nb_colonnes)
+		for i in range(1, self.__nb_lignes - 1):
+			for j in range(1, self.__nb_colonnes - 1):
+				if self.__grille[i][j] == '#' and all(
+						self.__grille[i + di][j + dj] == '#'
+						for di, dj in [(-1, 0), (+1, 0), (0, -1), (0, +1)]):
+					érodée.noircir(i, j)
+		return érodée
+
+
+nb_érosions = int(input())
+nb_lignes, nb_colonnes = map(int, input().split())
+grille = [list(input()) for _ in range(nb_lignes)]
+image = Image(nb_lignes, nb_colonnes, grille)
+for _ in range(nb_érosions):
+	image = image.érosion()
+image.affiche()

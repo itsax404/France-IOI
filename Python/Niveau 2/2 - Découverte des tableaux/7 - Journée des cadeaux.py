@@ -1,6 +1,6 @@
-from math import *
 nombre_habitants = int(input())
-fortune = [0]*nombre_habitants
+fortune = [0 for _ in range(nombre_habitants)]
+
 for x in range(nombre_habitants):
    a = int(input())
    fortune[x]= a

@@ -2,13 +2,7 @@ def main():
 
     nombre_lignes, nombre_colonnes = map(int, input().split())
 
-    infographie = []
-   
-    for x in range(nombre_colonnes):
-        a = []
-        for y in range(nombre_lignes):
-            a.append(".")
-        infographie.append(a)
+    infographie = [ ["." for _ in range(nombre_lignes)] for _ in range(nombre_colonnes)]
 
     nombre_rectangles = int(input())
 

@@ -1,6 +1,6 @@
 phrase = input().upper()
 
-alphabet = [0]*26
+alphabet = [0 for _ in range(26)]
 
 code_a_majuscule = ord("A")
 

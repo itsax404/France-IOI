@@ -1,8 +1,8 @@
 nombre_livre = int(input())
-longueur_titre2 = 0
+plus_grand_titre = ""
+
 for x in range(nombre_livre):
    titre = input()
-   ltitre = len(titre)
-   if ltitre > longueur_titre2:
-      ltitre2 = ltitre
+   if titre > plus_grand_titre:
+      plus_grand_titre = titre
       print(titre)

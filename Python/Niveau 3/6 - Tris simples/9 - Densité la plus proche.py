@@ -1,12 +1,30 @@
 def abs(nombre):
     """
-    docstring
+    Retourne la valeur absolue du nombre `nombre`
+    Entrée:
+        nombre: int
+    Sortie:
+        nombre: int
+    >>> abs(-12)
+    12
+    >>> abs(12)
+    12
+    >>> abs(-150)
+    150
+    >>> abs(48)
+    48
     """
     return nombre if nombre > 0 else -nombre
 
-def chercher_le_plus_proche(question, liste, nombre_blocs):
+def chercher_le_plus_proche(question: int, liste: list[int], nombre_blocs: int) -> int:
     """
-    docstring
+    Cette fonction permet d'envoyer l'élément le plus proche dans `liste`
+    Entrées:
+        question: int
+        liste: list[int]
+        nombre_blocs: int
+    Sortie:
+        réponse: int
     """
     if question >= liste[nombre_blocs-1]:
         return liste[nombre_blocs-1]

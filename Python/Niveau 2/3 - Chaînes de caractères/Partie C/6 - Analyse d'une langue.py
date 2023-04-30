@@ -1,6 +1,7 @@
 lettre_recherche = input()
 nombre_ligne = int(input())
 nombre_lettre = 0
+
 for x in range(nombre_ligne):
    phrase = input()
    longueur_phrase = len(phrase)

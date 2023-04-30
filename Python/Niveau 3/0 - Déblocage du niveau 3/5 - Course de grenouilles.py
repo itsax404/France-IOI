@@ -1,7 +1,9 @@
-nbGrenouilles = int(input())
+nb_grenouilles = int(input())
 nombre_tours = int(input())
-positions = [0] * (nbGrenouilles + 1)
-nombre_tours_en_tête = [0] * (nbGrenouilles + 1)
+
+positions = [0 for _ in range(nb_grenouilles + 1)]
+nombre_tours_en_tête = [0 for _ in range(nb_grenouilles + 1)]
+
 maximum = 0
  
 for loop in range(nombre_tours - 1):

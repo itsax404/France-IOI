@@ -1,6 +1,7 @@
 nombre_table = int(input())
 nombre_changement = int(input())
 position_personne = [0]*nombre_table
+
 for x in range(nombre_table):
    position = int(input())
    position_personne[x] = position_personne

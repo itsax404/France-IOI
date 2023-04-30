@@ -26,4 +26,4 @@ for x in range(2):
     prénom = prénoms[x]
     nombres_amour[x] = calcul_nombre_d_amour(prénom)
 
-print("{} {}".format(nombres_amour[0], nombres_amour[1]))
+print(f"{nombres_amour[0]} {nombres_amour[1]}")

@@ -2,7 +2,7 @@ def main():
 
     def est_un_pion(ligne, colonne, grille):
         """
-        Retourne un booléen
+        Retourne un booléen s'il y a un pion aux coordonées `(ligne, colonne)`
         """
         if ((ligne < 0) or (ligne >= 8) or (colonne < 0) or (colonne >= 8)):
             return False

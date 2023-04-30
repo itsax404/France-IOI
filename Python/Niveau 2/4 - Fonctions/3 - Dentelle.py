@@ -1,4 +1,8 @@
 def motif(longueur):
+   """
+   Affiche un motif de longueur donnée
+   Entrée : longueur, un entier
+   """
    for loop in range(longueur):
       print("X", end = "")
    print()

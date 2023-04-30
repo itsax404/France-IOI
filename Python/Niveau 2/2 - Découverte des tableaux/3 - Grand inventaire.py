@@ -1,4 +1,4 @@
-quantité_liste = [0]*10
+quantité_liste = [0 for _ in range(10)]
 nombre_opérations = int(input())
 for loop in range(nombre_opérations):
     numéro = int(input())

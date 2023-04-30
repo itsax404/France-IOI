@@ -1,5 +1,5 @@
 nombre_emplacements = int(input())
-emplacements = [0]*nombre_emplacements
+emplacements = [0 for _ in range(nombre_emplacements)]
 
 for x in range(nombre_emplacements):
    emplacement_actuel = int(input())

@@ -1,6 +1,6 @@
 phrase = input().upper()
 
-alphabet = [0]*26
+alphabet = [0 for _ in range(26)]
 
 for caractère in phrase:
     code_unicode = ord(caractère)
